@@ -1,0 +1,113 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+#- greeting:
+#    text_size: 4xl
+#    text: debian.serwer
+#- Kalendarz:
+#    widget:
+#        type: calendar
+- debian.serwer:
+    - "":
+        description: "Debian GNU/Linux 12 (bookworm) x86_64"
+        ping: serwer.kcn.lan
+
+- Usługi:    
+    - Portainer:
+        icon: portainer.svg
+        href:  "{{HOMEPAGE_VAR_PORTAINER_URL}}" 
+        description: docker
+        siteMonitor: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+        statusStyle: 'dot'
+        widget:
+            type: portainer
+            url:  "{{HOMEPAGE_VAR_PORTAINER_URL}}" 
+            env: 2
+            key:  "{{HOMEPAGE_VAR_PORTAINER_API_KEY}}" 
+    - piHole:
+        icon: pi-hole.svg
+        href:  "{{HOMEPAGE_VAR_PIHOLE_URL_2}}" 
+        description: dns
+        siteMonitor: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
+        statusStyle: 'dot'  
+        widget:
+            type: pihole
+            url:  "{{HOMEPAGE_VAR_PIHOLE_URL_1}}" 
+            key:  "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"  
+    - Uptime Kuma:
+        icon: uptime-kuma.svg
+        href:  "{{HOMEPAGE_VAR_UPTIME_KUMA_URL_2}}" 
+        description: status serwera
+        siteMonitor: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
+        statusStyle: 'dot'
+    - Nginx:
+        icon: nginx-proxy-manager.svg
+        href: "{{HOMEPAGE_VAR_NGINX_URL}}"
+        description: proxy manager
+        siteMonitor: "{{HOMEPAGE_VAR_NGINX_URL}}"
+        statusStyle: 'dot'
+- Media:
+     - qBittorrent:
+         icon: qbittorrent.svg
+         href: "{{HOMEPAGE_VAR_QBITT_URL}}"
+         discription: torrent client
+         ping: "{{HOMEPAGE_VAR_QBITT_URL}}"
+         statusStyle: 'dot'
+         widget:
+             type: qbittorrent
+             hideErrors: true
+             url: "{{HOMEPAGE_VAR_QBITT_URL}}"
+             username: "{{HOMEPAGE_VAR_QBITT_USERNAME}}"
+             password: "{{HOMEPAGE_VAR_QBITT_PASSWORD}}"
+     - Jellyfin:
+         icon: jellyfin.svg
+         href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+         disciption: media center
+         ping: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+         statusStyle: 'dot'
+         widget: 
+             hideErrors: true
+             type: jellyfin
+             url: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+             key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
+             enableBlocks: true 
+             enableNowPlaying: true
+             
+- Sieć:
+    - Router:
+        icon: router.svg
+        href: "{{HOMEPAGE_VAR_ROUTER_URL}}"
+        description: Compal
+        ping: "{{HOMEPAGE_VAR_ROUTER_URL}}"
+    - AccesPoint:
+        icon: /icons/wifi2.png
+        href: "{{HOMEPAGE_VAR_UBI_URL}}"
+        description: Loco M2
+        ping: "{{HOMEPAGE_VAR_UBI_URL}}"
+    - Kamera:
+        icon: /icons/camera2.png
+        href: "{{HOMEPAGE_VAR_CAMERA_URL}}"
+        description: HikVision
+        ping: "{{HOMEPAGE_VAR_CAMERA_URL}}"
+
+- "| kCn ~":
+    - kcn333.pl:
+        icon: /icons/www2.svg
+        href: https://kcn333.pl/
+       # description: Homepage
+        ping: https://kcn333.pl/
+        #statusStyle: 'dot' 
+    - gitHub:
+        icon: /icons/github.svg
+        href: https://github.com/kCn3333
+        #statusStyle: 'dot'
+    - ownCloud:
+        icon: owncloud.svg
+        href: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
+        ping: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
+        #statusStyle: 'dot'
+    - cloudFlare:
+        icon: cloudflare.svg
+        href: https://dash.cloudflare.com/login
+        #statusStyle: 'dot' 

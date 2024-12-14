@@ -1,0 +1,41 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+title: "[ kCn ]"
+theme: dark
+color: slate
+language: pl
+favicon: "{{HOMEPAGE_VAR_FAVICON_URL}}"
+background:
+  image: /images/wallpaper.jpg
+  #blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 15 # 0-100
+
+providers:
+  openweathermap: "{{HOMEPAGE_VAR_WEATHER_API}}"
+  #weatherapi: weatherapiapikey
+
+hideVersion: true
+#useEqualHeights: true
+showStats: true
+
+layout:
+  debian.serwer:
+    icon: debian.svg
+    style: row
+    columns: 1
+  Usługi:
+    style: row
+    columns: 2
+  Media:
+    style: row
+    columns: 2
+  Sieć:
+    style: row
+    columns: 3
+  "| kCn ~":
+    style: row
+    columns: 2

@@ -1,0 +1,47 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/service-widgets
+- logo:
+    icon: "{{HOMEPAGE_VAR_FAVICON_URL}}" # optional
+
+- resources:
+    label: System
+    cpu: true
+    cputemp: true
+- resources:
+    label: Up
+    uptime: true
+- resources:
+    label: Pamięć
+    memory: true
+    refresh: 3000
+    disk: /
+#- resources:
+#    label: Disks
+#    expanded: true
+#    disk:
+#      - /
+#      - /
+
+#- search:
+#    provider: duckduckgo
+#    target: _blank
+- datetime:
+    text_size: md
+    locale: pl
+    format:
+       dateStyle: short
+       timeStyle: long
+
+- openweathermap:
+    label: Kraków #optional
+    latitude: 50.0
+    longitude: 19.9
+    units: metric # or imperial
+    provider: openweathermap
+    apiKey:  "{{HOMEPAGE_VAR_WEATHER_API}}"
+    cache: 45
+
+#- greeting:
+#    text_size: xs
+#    text: "debian.serwer"
